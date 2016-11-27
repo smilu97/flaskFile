@@ -11,6 +11,10 @@ def get_file(filename):  # pragma: no cover
     except IOError as exc:
         return str(exc)
 
+@app.route('/')
+def home() :
+	return 'this is fileserver'
+
 @app.route('/<path:path>')
 def servFile(path):  # pragma: no cover
     mimetypes = {
